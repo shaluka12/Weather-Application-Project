@@ -1,0 +1,99 @@
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Ropa+Sans:ital@0;1&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Ropa Sans", sans-serif;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: "Poppins";
+    background-image: url("img/sky.jpg");
+    text-align: center;
+    padding: 20px;
+}
+ 
+.card-container {
+    background: none;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr; /*------------------- Default for mobile-------------------------- */
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+} 
+
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(129, 198, 212, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card-flex{
+    display: flex;
+    background-color: rgba(129, 198, 212, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.card-flexdown{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(234, 239, 240, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.flexCardBar{
+    display: flex;
+    background-color: rgba(234, 239, 240, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    
+}
+.flexdownCardBar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(234, 239, 240, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    gap: 5px;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+fieldset{
+    background-color: rgba(205, 240, 248, 0.15);
+    border-radius: 8px;
+}
+
+/*--------------------------------- Media Query for Tablets------------------------------------------------------- */
+@media (min-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        gap: 20px;
+    }
+}
+
+/*-------------------------------- Media Query for Laptops and Desktops----------------------------------------- */
+@media (min-width: 992px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 3 columns on laptops/desktops */
+        gap: 20px;
+    }
+}
+
+
+

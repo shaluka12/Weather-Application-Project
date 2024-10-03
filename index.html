@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- input field -->
+     <fieldset>
+        <input type="text" id="cityInput" placeholder="City name">
+        <button id="Search" type="button">Search</button>
+     </fieldset>
+    
+    <!-- main cards -->
+    <div class="card-container">
+        <!-- left card -->
+        <div class="card-flexdown" >
+            <!-- current date and day -->
+             <div class="card flex">
+                <h1 id="currentday">Sunday</h1>
+                <h3 id="currentdate">2024-10-02</h3>
+             </div>
+            <!-- current weather data -->
+             <div class="card-flex" style="background:none;">
+                <div class="card-flexdown" id="currentLeftData">
+                    <div class="card-flex">
+                        <img src="img/weather.png" alt="sun cloud" style="width: 150px; height: 150px;">
+                        <h1>location</h1>
+                    </div>
+                    <p></p>
+                    <div><h1>Hourly card</h1></div>
+                </div>
+                <!-- current cards -->
+                <div class="flexdownCardBar">
+                    <!-- temperature -->
+                    <div>
+                        <h4>temperature</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-thermometer-sun"></i> 
+                            <h1 id="currenttemp">10</h1>
+                        </div>
+                    </div>
+                    <!-- humidity -->
+                    <div>
+                        <h4>Humidity</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-moisture"></i>
+                            <h1 id="currenthumidity">10</h1>
+                        </div>
+                    </div>
+                    <!-- wind speed -->
+                    <div>
+                        <h4>Wind speed</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-wind"></i>
+                            <h1 id="currentwindSpeed">10</h1>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             
+             
+            <!-- forcast 3 days -->
+             <div class="flexCardBar style="background: none; id="forcast3days">
+                <!-- forcast day 1 -->
+                <div class="flexdownCardBar">
+                    <!-- day-->
+                    <div>
+                        <h2>2024-10-02</h2>
+                        <h1>Sunday</h1>
+                    </div>
+                    <!-- temperature -->
+                    <div>
+                        <h4>temperature</h4>
+                        <div class="card-flex" >
+                            <i class="bi bi-thermometer-sun"></i> 
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                    <!-- humidity -->
+                    <div>
+                        <h4>humidity</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-moisture"></i>
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                    <!-- wind speed -->
+                    <div>
+                        <h4>wind speed</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-wind"></i>
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- forcast day2 -->
+                <div class="flexdownCardBar">
+                    <!-- day-->
+                    <div>
+                        <h2>2024-10-02</h2>
+                        <h1>Sunday</h1>
+                    </div>
+                    <!-- temperature -->
+                    <div>
+                        <h4>temperature</h4>
+                        <div class="card-flex" >
+                            <i class="bi bi-thermometer-sun"></i> 
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                    <!-- humidity -->
+                    <div>
+                        <h4>humidity</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-moisture"></i>
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                    <!-- wind speed -->
+                    <div>
+                        <h4>wind speed</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-wind"></i>
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- forcast day3 -->
+                <div class="flexCardBar">
+                    <!-- day-->
+                    <div>
+                        <h2>2024-10-02</h2>
+                        <h1>Sunday</h1>
+                    </div>
+                    <!-- temperature -->
+                    <div>
+                        <h4>temperature</h4>
+                        <div class="card-flex" >
+                            <i class="bi bi-thermometer-sun"></i> 
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                    <!-- humidity -->
+                    <div>
+                        <h4>humidity</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-moisture"></i>
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                    <!-- wind speed -->
+                    <div>
+                        <h4>wind speed</h4>
+                        <div class="card-flex">
+                            <i class="bi bi-wind"></i>
+                            <h2>10</h2>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+        </div>
+        <!-- right card -->
+        <div class="flexdownCardBar" id="historycalDays">
+            <!-- past day1 -->
+            <div class="flexCardBar" >
+                <div>
+                    <h2>2024-10-02</h2>
+                    <h1>Sunday</h1>
+                </div>
+                <!-- temperature -->
+                <div>
+                    <h4>temperature</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-thermometer-sun"></i> 
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- humidity -->
+                <div>
+                    <h4>Humidity</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-moisture"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- wind speed -->
+                <div>
+                    <h4>Wind speed</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-wind"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- pst day2 -->
+            <div class="flexCardBar" >
+                <div>
+                    <h2>2024-10-02</h2>
+                    <h1>Sunday</h1>
+                </div>
+                <!-- temperature -->
+                <div>
+                    <h4>temperature</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-thermometer-sun"></i> 
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- humidity -->
+                <div>
+                    <h4>Humidity</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-moisture"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+                 
+                <div>
+                    <h4>wind speed</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-wind"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+            <!------------------------ past day3-------------------------------- -->
+            
+            <div class="flexCardBar" >
+                <div>
+                    <h2>2024-10-02</h2>
+                    <h1>Sunday</h1>
+                </div>
+                <!-- temperature -->
+                <div>
+                    <h4>temperature</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-thermometer-sun"></i> 
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- humidity -->
+                <div>
+                    <h4>humidity</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-moisture"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- wind speed -->
+                <div>
+                    <h4>wind speed</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-wind"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- past day4 -->
+            <div class="flexCardBar" >
+                <div>
+                    <h2>2024-09-11</h2>
+                    <h1>Sunday</h1>
+                </div>
+                <!-- temperature -->
+                <div>
+                    <h4>temperature</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-thermometer-sun"></i> 
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- humidity -->
+                <div>
+                    <h4>Humidity</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-moisture"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- wind speed -->
+                <div>
+                    <h4>wind speed</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-wind"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- past day5 -->
+            <div class="flexCardBar" >
+                <div>
+                    <h2>2024-09-11</h2>
+                    <h1>Sunday</h1>
+                </div>
+                <!-- temperature -->
+                <div>
+                    <h4>temperature</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-thermometer-sun"></i> 
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- humidity -->
+                <div>
+                    <h4>humidity</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-moisture"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- wind speed -->
+                <div>
+                    <h4>wind speed</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-wind"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+            <!---------------------------- past day6----------------------------------->
+            <div class="flexCardBar" >
+                <div>
+                    <h2>2024-10-02</h2>
+                    <h1>Sunday</h1>
+                </div>
+                <!-- temperature -->
+                <div>
+                    <h4>temperature</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-thermometer-sun"></i> 
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- humidity -->
+                <div>
+                    <h4>Humidity</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-moisture"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- wind speed -->
+                <div>
+                    <h4>wind speed</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-wind"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- past day7 -->
+            <div class="flexCardBar" >
+                <div>
+                    <h2>2024-10-02</h2>
+                    <h1>Sunday</h1>
+                </div>
+                <!-- temperature -->
+                <div>
+                    <h4>temperature</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-thermometer-sun"></i> 
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- humidity -->
+                <div>
+                    <h4>humidity</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-moisture"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+                <!-- wind speed -->
+                <div>
+                    <h4>wind speed</h4>
+                    <div class="card-flex">
+                        <i class="bi bi-wind"></i>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
