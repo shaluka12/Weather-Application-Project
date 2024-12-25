@@ -3,6 +3,7 @@ document.getElementById('Search').addEventListener('click', function() {
     historical();
     future();
 });
+
 function currentday(){
     const city = document.getElementById('cityInput').value;
     const apiKey = '86bc4cd7e61f47d6a3451547242709'; 
@@ -46,16 +47,16 @@ async function historical() {
     const currentDate = new Date();
     let weatherData = ''; // Change to 'let' to allow modification
 
-    // Array to hold all fetch requests
+    //----------------------Array to hold all fetch requests------------------------//
     let fetchPromises = [];
 
     for (let i = 0; i < 7; i++) {
-        // Calculate the date for the past 7 days
+        // ------------------------Calculate the date for the past 7 days-----------------//
         const pastDate = new Date(currentDate);
         pastDate.setDate(currentDate.getDate() - i);
-        const formattedDate = pastDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+        const formattedDate = pastDate.toISOString().split('T')[0]; //Format as YYYY-MM-DD//
 
-        // Store each fetch promise in the array
+        //-----------------Store each fetch promise in the array-------------------------//
         const fetchPromise = fetch(`https://api.weatherapi.com/v1/history.json?key=${apiKey}&q=${location}&dt=${formattedDate}`)
             .then(response => response.json())
             .then(data => {
